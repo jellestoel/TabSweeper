@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "TabSweeper",
+  "version": "1.5.0",
+  "description": "Sort, group, and sweep your Chrome tabs by title or FQDN, group by domain, or merge windows.",
+  "action": {
+    "default_title": "TabSweeper",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "tabGroups",
+    "contextMenus",
+    "notifications"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

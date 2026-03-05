@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TabSweeper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- (Optional) keep Bootstrap if you want, but the new CSS doesn't depend on it -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+
+<script defer src="js/popup.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="app__header" aria-label="Header">
+      <div class="brand">
+        <img src="icons/icon48.png" class="brand__logo" alt="" aria-hidden="true" />
+        <div class="brand__meta">
+          <h1 class="brand__title">TabSweeper</h1>
+          <p class="brand__subtitle">Sort, group, merge, clean.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="stats" aria-label="Tab statistics">
+      <div class="stat">
+        <div class="stat__value" id="statTabs">—</div>
+        <div class="stat__label">Tabs</div>
+      </div>
+      <div class="stat">
+        <div class="stat__value" id="statWindows">—</div>
+        <div class="stat__label">Windows</div>
+      </div>
+      <div class="stat">
+        <div class="stat__value" id="statGroups">—</div>
+        <div class="stat__label">Groups</div>
+      </div>
+      <div class="stat">
+        <div class="stat__value" id="statDomains">—</div>
+        <div class="stat__label">Domains</div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Sorting">
+      <h2 class="section__title">Sorting</h2>
+      <div class="button-grid">
+        <button id="buttonFQDN" class="btn" title="FQDN (A→Z, stable)  •  Shortcut: F" aria-label="Sort by FQDN">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v2H3zm0 14h18v2H3zM7 9h10v6H7z"/></svg>
+          FQDN (A–Z)
+        </button>
+        <button id="buttonT" class="btn" title="Title (A→Z)  •  Shortcut: T" aria-label="Sort by Title">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v2H5zM5 9h10v2H5zM5 14h14v2H5zM5 19h10v2H5z"/></svg>
+          Title (A–Z)
+        </button>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Organize">
+      <h2 class="section__title">Organize</h2>
+      <div class="button-grid">
+        <button id="buttonMergeWindows" class="btn" title="Merge all windows into current  •  Shortcut: M" aria-label="Merge all windows">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v6H4zM7 12h10v2H7zM9 16h6v2H9z"/></svg>
+          Merge All Windows
+        </button>
+        <button id="buttonGroupFQDN" class="btn" title="Group tabs by FQDN  •  Shortcut: G" aria-label="Group by FQDN">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h8v8H3zM13 7h8v4h-8zM13 13h8v2h-8z"/></svg>
+          Group by FQDN
+        </button>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Domains">
+      <h2 class="section__title">Domains</h2>
+      <p class="domain-hint" id="domainHint">Click a domain to close all unpinned tabs from it.</p>
+      <div class="domain-list" id="domainList" role="list"></div>
+      <div class="domain-resize-handle" id="domainResizeHandle" title="Drag to resize" aria-hidden="true"></div>
+      <p class="domain-empty" id="domainEmpty" hidden>No domains to show.</p>
+    </section>
+
+    <section class="options" aria-label="Options">
+      <label class="switch">
+        <input type="checkbox" id="toggleAutoClose" />
+        <span class="switch__control" aria-hidden="true"></span>
+        <span class="switch__label">Close popup after action</span>
+      </label>
+      <label class="switch">
+        <input type="checkbox" id="toggleConfirm" />
+        <span class="switch__control" aria-hidden="true"></span>
+        <span class="switch__label">Confirm on merge</span>
+      </label>
+    </section>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="busy" aria-hidden="true">
+    <div class="spinner" aria-label="Working…"></div>
+  </div>
+</body>
+</html>
