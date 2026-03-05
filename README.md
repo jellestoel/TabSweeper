@@ -2,14 +2,16 @@
 
 A Chrome extension that helps you sort, group, and manage your browser tabs.
 
+![TabSweeper screenshot](tabsorter.png)
+
 ## Features
 
 - **Sort by FQDN (A-Z)** — Sort tabs alphabetically by domain name (stable sort preserves relative tab order within the same domain)
 - **Sort by Title (A-Z)** — Sort tabs alphabetically by page title
 - **Group by FQDN** — Automatically group tabs by domain into named tab groups (requires 2+ tabs per domain)
-- **Merge All Windows** — Move all tabs from other windows into the current window
-- **Domain list** — See all open domains ranked by tab count; click a domain to close all unpinned, inactive tabs from it
-- **Stats bar** — Live counts for tabs, windows, groups, and domains
+- **Merge All Windows** — Pull all tabs from every open Chrome window into the current one
+- **Domain list** — See all open domains across all windows ranked by tab count; click a domain to close all unpinned, inactive tabs from it
+- **Stats bar** — Live counts for tabs, windows, groups, and domains — reflects all open Chrome windows
 
 ## Options
 
