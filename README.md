@@ -2,7 +2,7 @@
 
 A Chrome extension that helps you sort, group, and manage your browser tabs.
 
-<img src="tabsorter.png" width="360" alt="TabSweeper screenshot" />
+<img src="tabsorter.png" width="480" alt="TabSweeper screenshot" />
 
 ## Features
 
